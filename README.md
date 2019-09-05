@@ -51,7 +51,7 @@ Student address on a label- information
 - ranges of data stored using real numbers, continuous not discrete
 - Predictions from regression range could also be a range rather than a closed set
 - In many cases you can change a regression to classification
-- Supervised learning and Structured Data is the focus of this course
+- Supervised learning and Structured Data are focused on in this course
 
 - Unsupervised Learning - structure of data is unknown, no known labels or classifications. These algorithms make inferences typically from big datasets.
 
