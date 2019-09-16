@@ -81,6 +81,13 @@ Student address on a label- information
 - Labels (classifications) - composed of both independent and dependent data
 
 ##### 2.1 
+- Why Now? Collection of data has become more accurate and frequent, many facets of our lives are recorded in huge quantities, so we require Machine Learning to help turn big data into useful information.
+- Computational Power - increase in processing power and cloud storage make it possible to process massive amounts of data faster, so ML algorithms allow us to understand and analyze data faster.
+- Opportunities - explosion of jobs in the area of big data and software to deal with it, which will allow companies to understand their markets better and make more strategic decisions. 
+- Comparing Tech Over Time - iPhone 4 has 2.7 times the processing power of a 1985 Cray-2 supercomputer, which could fill a small room.
+- Nintendo Entertainment System released in 1985 contained half of the processing power of the Apollo computer Guidance system
+- Took around 15 years for a home product to match what was the fastest super computer available at the time (also greatly reduced size in that time)
+- Moore's Law - 
 
 ##### 2.2
 
