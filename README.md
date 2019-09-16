@@ -81,3 +81,7 @@ Student address on a label- information
 - Labels (classifications) - composed of both independent and dependent data
 
 ##### 2.1 
+
+##### 2.2
+
+##### Section 1 and 2 Quiz
