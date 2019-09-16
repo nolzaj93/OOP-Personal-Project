@@ -79,3 +79,5 @@ Student address on a label- information
 3. Dependent data is determined by the independent data, so the classifications of age, has job, owns house, and credit rating are used to determine a loan approval for rows 3,5, and 6.
 
 - Labels (classifications) - composed of both independent and dependent data
+
+##### 2.1 
