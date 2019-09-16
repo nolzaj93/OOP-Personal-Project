@@ -87,7 +87,7 @@ Student address on a label- information
 - Comparing Tech Over Time - iPhone 4 has 2.7 times the processing power of a 1985 Cray-2 supercomputer, which could fill a small room.
 - Nintendo Entertainment System released in 1985 contained half of the processing power of the Apollo computer Guidance system
 - Took around 15 years for a home product to match what was the fastest super computer available at the time (also greatly reduced size in that time)
-- Moore's Law - 
+- Moore's Law - In 1965, Gordon E. Moore, co-founder of Intel, had an insight that the number of transistors per integrated circuit will double about every two years. This held true from 1975 to 2012, and Intel said 2015 their pace of advancement has slowed.
 
 ##### 2.2
 
