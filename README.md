@@ -79,7 +79,7 @@ Student address on a label- information
 3. Dependent data is determined by the independent data, so the classifications of age, has job, owns house, and credit rating are used to determine a loan approval for rows 3,5, and 6.
 
 - Labels (classifications) - composed of both independent and dependent data
-
+##### Section 2 (2 hours)
 ##### 2.1 
 - Why Now? Collection of data has become more accurate and frequent, many facets of our lives are recorded in huge quantities, so we require Machine Learning to help turn big data into useful information.
 - Computational Power - increase in processing power and cloud storage make it possible to process massive amounts of data faster, so ML algorithms allow us to understand and analyze data faster.
@@ -89,6 +89,40 @@ Student address on a label- information
 - Took around 15 years for a home product to match what was the fastest super computer available at the time (also greatly reduced size in that time)
 - Moore's Law - In 1965, Gordon E. Moore, co-founder of Intel, had an insight that the number of transistors per integrated circuit will double about every two years. This held true from 1975 to 2012, and Intel said 2015 their pace of advancement has slowed.
 
-##### 2.2
+##### 2.2 Machine Learning Workflow
+- Objectives - Understand the use of models within machine learning and the CRISP-DM model
+
+###### Machine Learning Workflow
+- Identify the entire process for a ML solution to complete a project. There obviously must be an unsolved problem or an opportunity to understand it better. 
+- ML needs data input, computational power, and algorithms as a start to solving/understanding the problem
+- goal of ML is the correct interpretation of results
+
+###### Models
+- Many models in data science regarding ML, like CRISP-DM (Cross-Industry Standard Process for Data Mining), which has 6 stages
+
+###### CRISP Stages
+- Business understanding - What question(s) need to be answered? <--> 
+- Data understanding - Where will the data originate? -->
+- Data preparation - What data is required? <-->
+- Modeling - What machine learning will be used? -->
+- Evaluation- Evaluate results of the machine learning -->
+- The first five steps are cyclical
+- Deployment - Push out the solution
+
+###### CRISP Steps for Loan Application
+- Example: Bank has processed loan applications over a number of years which provides data for use in modelling.
+- Step 1 - should the application be approved?
+- Step 2 - use data and outcomes from previous applications 
+- Step 3 - Required criteria: Salary, contract length, outstanding loans, credit history
+- Step 4 - ML approach(es) which fits this scenario best
+- Step 5 - Evaluate the results of the ML algorithm by using learning and test data
+
+###### Public Data Sets
+- http://archive.ics.uci.edu/ml/datasets.html
+- This lists data sets where ML could be applied to analyze and predict outcomes
+
+###### Task
+- A reason to work with this data set would be to better filter out phishing emails.
+- https://archive.ics.uci.edu/ml/datasets/Website+Phishing
 
 ##### Section 1 and 2 Quiz
