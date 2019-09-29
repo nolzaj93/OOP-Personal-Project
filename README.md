@@ -126,3 +126,27 @@ Student address on a label- information
 - https://archive.ics.uci.edu/ml/datasets/Website+Phishing
 
 ##### Section 1 and 2 Quiz
+
+
+Test Summary: Sections 1 & 2 Quiz
+Click a question to return to it. You will see the response that was entered and whether or not the response was correct. If the response was incorrect the correct answer will be displayed.
+	
+	Section 1 	
+	11 	11
+	[Answered] 	     What is data exhaust? 	Yes 	1 	1
+	[Answered] 	     Which of the following is the... 	Yes 	1 	1
+	[Answered] 	     Average results for a class i... 	Yes 	1 	1
+	[Answered] 	     What does data mean? 	Yes 	1 	1
+	[Answered] 	     Recording the tempearture eve... 	Yes 	1 	1
+	[Answered] 	     In a loan example "has job is... 	Yes 	1 	1
+	[Answered] 	     Classification of data is whe... 	Yes 	1 	1
+	[Answered] 	     Rainfall recorded as 2,3,0,3,... 	Yes 	1 	1
+	[Answered] 	     You watch a baseball game wit... 	Yes 	1 	1
+	[Answered] 	     Regression of data is when 	Yes 	1 	1
+	[Answered] 	     Is raw processing power a dem... 	Yes 	1 	1
+	Section 2 	
+	4 	4
+	[Answered] 	     Cloud computing is one of the... 	Yes 	1 	1
+	[Answered] 	     In the CRIP model we cannot m... 	Yes 	1 	1
+	[Answered] 	     In the CRISP model, how would... 	Yes 	1 	1
+	[Answered] 	     The single most important thi... 	Yes 	1 	1
