@@ -149,7 +149,7 @@ Test Summary: Sections 1 & 2 Quiz
 	[Answered] 	     In the CRISP model, how would... 	Yes 	1 	1
 	[Answered] 	     The single most important thi... 	Yes 	1 	1
 
-##### Section 3: Trees and Recursion (3.5 hours)
+##### Section 3: Trees and Recursion
 
 ##### 3.1 Binary Trees
 - Decision Tree Algorithms - construct a model based on answers (or values) from data.
@@ -214,7 +214,56 @@ public class Node{
 - Base case - ends the recursion which prevents an infinite loop, and is often when a value of 1 or 0 is reached.
 - Recursion breaks problems down until it becomes smaller and smaller until the base care is met.
 
-```
+- Non-recursive power method
 
 ```
+ int power(int a, int n) {
+   int result = 1;
+   for(int i=0;i<n;i++) {
+ 	result *=a;
+   }
+ 
+ }
+```
 
+- Recursive power method
+```
+ int power(int a, int n) {
+   if (n == 0) {
+   	return 1;
+   } else {
+   	return a * power(a, n-1);
+   }
+ }
+```
+- If we call power(2,3) with the recursive method then we see the following process
+1. power(2,0) (the base case) returns 1 to power(2,1)
+2. power(2,1) returns 2 to power(2,2)
+3. power(2,2) returns 4 to power(2,3)
+4. 8 is the result returned
+
+- Every call to itself creates a new copy that has its own local variables and parameters.
+- Memory Issues - in a recursive solution, much more memory is required as the number of calls increases and could eventually lead to a StackOverflowError, or delay in creating a method
+
+###### Task
+
+- Factorial Solution 
+```
+ public static int factorial(int n) {
+ 	if(n == 1) {
+	    return 1;
+	}
+	return n * factorial(n-1);
+ }
+```
+- Fibonacci Solution
+```
+ public static int Fibonacci (int x) {
+ 	if( x < 2) {
+	    return 1;
+	} else {
+	    return Fibonacci(x-1) + Fibnocci(x-2);
+	}
+ }
+```
+- Sections 3.1 and 3.2(1.5 hours)
