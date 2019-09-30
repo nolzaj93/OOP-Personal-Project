@@ -167,10 +167,17 @@ Test Summary: Sections 1 & 2 Quiz
 - Binary trees are useful for linked hierarchies. We create a class called Node and each instance represents a node on the tree. The node's stored ata type can be anything, and could be designed first as generic, then set the specific data type at design time.
 - Node objects will have a left and right property, and if it is a leaf then it will be null.
 ```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+public class Node{
+  int data;
+  Node left;
+  Node right;
+  
+  public Node(int data) {
+  	this.data = data;
+	left = null;
+	right = null;
+  }
+
 }
 ```
 
