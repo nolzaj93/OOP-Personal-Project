@@ -125,7 +125,7 @@ Student address on a label- information
 - A reason to work with this data set would be to better filter out phishing emails.
 - https://archive.ics.uci.edu/ml/datasets/Website+Phishing
 
-##### Section 1 and 2 Quiz
+##### Section 1 and 2 Quiz (30 Minutes)
 
 Test Summary: Sections 1 & 2 Quiz
 	
@@ -148,3 +148,23 @@ Test Summary: Sections 1 & 2 Quiz
 	[Answered] 	     In the CRIP model we cannot m... 	Yes 	1 	1
 	[Answered] 	     In the CRISP model, how would... 	Yes 	1 	1
 	[Answered] 	     The single most important thi... 	Yes 	1 	1
+
+##### Section 3: Trees and Recursion (3.5 hours)
+
+##### 3.1 Binary Trees
+- Decision Tree Algorithms - construct a model based on answers (or values) from data.
+- Binary Trees - a data structure composed of nodes, each of which has a left and right reference to other nodes. A tree is constrained to all nodes having a maximum of 2 child nodes.
+- First nodes is called the root node, and is the building block of all others
+- Every other node must be connected to a parent node
+- Nodes can have 0-2 child nodes, and a node with no children is called a leaf
+- Nodes with the same parent are called siblings
+
+###### Task
+1. What is the parent of 6? Node #3
+2. What is 1 the parent of? Nodes #2 and #3
+3. Explain the relationships of 5. Node #5 has a sibling (#4), a child (#7), and a parent (#2).
+
+- Binary trees are useful for linked hierarchies. We create a class called Node and each instance represents a node on the tree. The node's stored ata type can be anything, and could be designed first as generic, then set the specific data type at design time.
+- Node objects will have a left and right property, and if it is a leaf then it will be null.
+> blockquote Hello
+
