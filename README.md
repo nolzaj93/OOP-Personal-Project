@@ -177,7 +177,44 @@ public class Node{
 	left = null;
 	right = null;
   }
-
+  
+  public void setLeft(Node node) {
+  	if (left == null)
+	  left = node;
+  }
+  
+   public void setRight(Node node) {
+  	if (right == null)
+	  right = node;
+  }
+  
+  public Node getLeft() {
+  	return left;
+  }
+  
+  public Node getRight() {
+  	return right;
+  }
+  
+  public int getData() {
+  	return data;
+  }
+  
+  public void setData(int data) {
+  	this.data = data;
+  }
 }
+```
+- Tree Methods - parentNode.setLeft(childNode) and setRight(childNode) assigns the argument to the respective field, Node left or Node right. Node getLeft() and Node getRight() returns the Node object stored in those variables. To set and get data in the current node call setData(data) and getData(data).
+
+##### 3.2 Recursion
+- Recursion - when a method makes a call to itself
+- Useful for data structures like trees because it makes code smaller and more readable. However, these methods can be difficult to write and may take a while to get working. Infinite loops are easy to write on accident with recursion.
+- Recursion Base Case - the base case and recursive case must be defined. 
+- Base case - ends the recursion which prevents an infinite loop, and is often when a value of 1 or 0 is reached.
+- Recursion breaks problems down until it becomes smaller and smaller until the base care is met.
+
+```
+
 ```
 
