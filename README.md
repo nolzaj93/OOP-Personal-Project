@@ -150,6 +150,7 @@ Test Summary: Sections 1 & 2 Quiz
 	[Answered] 	     The single most important thi... 	Yes 	1 	1
 
 ##### Section 3: Trees and Recursion
+##### - Sections 3.1 and 3.2(1.5 hours)
 
 ##### 3.1 Binary Trees
 - Decision Tree Algorithms - construct a model based on answers (or values) from data.
@@ -266,4 +267,6 @@ public class Node{
 	}
  }
 ```
-- Sections 3.1 and 3.2(1.5 hours)
+##### Sections 3.3 and 3.4 (2 hours)
+
+##### Section 3.3
