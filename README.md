@@ -269,4 +269,119 @@ public class Node{
 ```
 ##### Sections 3.3 and 3.4 (2 hours)
 
-##### Section 3.3
+##### Section 3.3 Tree Traversal
+- Recursion allows us to navigate a tree structure to search for an item or print all nodes (tree traversal)
+- Binary Trees - can be navigated many ways starting from root, print algorithms are defined for trees
+- Pre-Order Traversal - print any given node before printing its children, and process to the left first: Parent, Left, Right
+- Post-Order Traversal - print each node only after printing its children, process to the left first: Left, Right, Parent
+- In-Order Traversal - prints left child and subtree, print the node, and then visit the right child: Left, Parent, Right
+
+###### Task - Recursive Tree Traversal
+```
+public class Node{
+  int data;
+  Node left;
+  Node right;
+  
+  public Node(int data) {
+  	this.data = data;
+	left = null;
+	right = null;
+  }
+  
+  public void setLeft(Node node) {
+  	if (left == null)
+	  left = node;
+  }
+  
+   public void setRight(Node node) {
+  	if (right == null)
+	  right = node;
+  }
+  
+  public Node getLeft() {
+  	return left;
+  }
+  
+  public Node getRight() {
+  	return right;
+  }
+  
+  public int getData() {
+  	return data;
+  }
+  
+  public void setData(int data) {
+  	this.data = data;
+  }
+  
+  public void printPreorder(Node node) {
+  	
+// 	while(node.getLeft() != null) {
+//		System.out.print(node.getData() + ", " + getLeft().getData());
+//		node = getLeft();
+//	}
+	
+	if (node == null)
+		return;
+		
+	System.out.print(node.data + " ");
+	printPreorder(node.left);
+	printPreorder(node.right);
+  }
+  
+  public void printPostorder(Node node) {
+  	if (node == null)
+		return;
+	
+	printPostorder(node.left);
+	printPostorder(node.right);
+	System.out.print(node.data + " ");
+  }
+  
+  public void printInorder(Node node) {
+  	if (node == null)
+		return;
+		
+	printInorder(node.left);
+	System.out.print(node.data + " ");
+	printInorder(node.right);
+  }
+}
+```
+
+- Driver Class
+```
+
+public class NodeDriver {
+
+    public static void main(String[] args) {
+	// write your code here
+        Node root = new Node(1);
+        Node node2 = new Node(2);
+        root.setLeft(node2);
+        Node node3 = new Node(3);
+        root.setRight(node3);
+
+        Node node4 = new Node(4);
+        node2.setLeft(node4);
+
+        Node node5 = new Node(5);
+        node2.setRight(node5);
+
+        Node node6 = new Node(6);
+        node3.setRight(node6);
+
+        Node node7 = new Node(7);
+        node5.setLeft(node7);
+
+        root.printPreorder(root);
+	System.out.println();
+	root.printPostorder(root);
+	System.out.println();
+	root.printPreorder(root);
+    }
+}
+
+```
+- Binary Trees - multiple ways to print the contents of nodes with recursive approaches
