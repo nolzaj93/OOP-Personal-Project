@@ -532,3 +532,357 @@ public class TreeDriver {
     }
 }
 ```
+
+##### Section 3.4 Yes/No Game (4 hours)
+- Yes/No game where user is asked a series of yes or no questions about which animal they are thinking about. 
+
+###### Task
+- If computer guesses correctly, then the computer wins.
+- If the computer does not guess correctly, then the player wins and the program "learns" where they went wrong.
+- At the start, the computer will know to only ask one question, but will not know the answer to it.
+- With Manual Decision Trees, it is more efficient to know the ideal first question and the order of the subsequent questions.
+- Solution can ask 20 questions, and we will use sample data to determine which questions hold highest priority (information entropy).
+- Decision Trees Data Set - data set used to create the decision tree. 
+- Starting data can be a table with a list of predictors/attributes.
+
+```
+package com.oop.ai.com.yesnogame;
+
+import java.util.Scanner;
+
+public class YNGameDriver {
+
+
+  public static void main(String[] args) {
+    BTree tree = new BTree();
+
+    Node root = new Node("Is it a mammal?", "");
+    Node node2 = new Node("Is it a dog?", "dog");
+    Node node3 = new Node("Is it a bird?", "bird");
+
+    tree.setRoot(root);
+
+    root.setLeft(node2);
+    root.setRight(node3);
+
+
+    Scanner scanner = new Scanner(System.in);
+    boolean programIsRunning = true;
+    do {
+      printMenu();
+      String menuChoice = scanner.nextLine();
+
+      switch (menuChoice) {
+        case "a":
+          startGame(tree, root);
+          break;
+        case "b":
+          programIsRunning = false;
+          break;
+        default:
+          System.out.println("Invalid entry");
+          break;
+      }
+
+    } while (programIsRunning);
+
+  }
+
+  public static void printMenu() {
+    System.out.println("Input a to play the animal guessing game.\n"
+        + "Input b to end the program.");
+  }
+
+  public static void startGame(BTree tree, Node root) {
+//Create Binary Tree
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Welcome to 20 Qs for Animals. Think of an animal and answer the questions\n"
+        + "with y for yes or n for no.\n");
+
+
+    boolean questionIsAnswered = false;
+    String enteredString;
+    do {
+      System.out.println(root.getQuestion());
+
+      enteredString = scanner.nextLine().toLowerCase().trim();
+
+      switch (enteredString) {
+        case "y":
+
+          tree.setCurrent(root.getLeft());
+
+          questionIsAnswered = true;
+          break;
+        case "n":
+
+
+          tree.setCurrent(root.getRight());
+
+          questionIsAnswered = true;
+          break;
+        default:
+          System.out.println("Invalid entry.");
+      }
+
+    } while (!questionIsAnswered);
+
+    tree = askNextQuestion(tree);
+
+    System.out.println("Let's play again!");
+    startGame(tree, root);
+
+    //tree.setCurrent(Node node);
+
+//    System.out.println("Set the current node to be the root");
+//    tree.setCurrent(root.getLeft());
+//
+//    System.out.println("Display the current node");
+//    System.out.println(tree.getCurrent().getQuestion());
+//
+//    Node currentNode = tree.getCurrent();
+//
+//    System.out.println("\nDisplay the nodes as tree diagram");
+
+  }
+
+  public static BTree askNextQuestion(BTree tree) {
+    Scanner scanner = new Scanner(System.in);
+
+    boolean questionIsAnswered = false;
+    String enteredString;
+    do {
+
+      Node currentNode = tree.getCurrent();
+      System.out.println(currentNode.getQuestion());
+
+      enteredString = scanner.nextLine().toLowerCase().trim();
+
+      switch (enteredString) {
+        case "y":
+          currentNode.setTrue(true);
+          if(currentNode.getLeft() != null) {
+            tree.setCurrent(currentNode.getLeft());
+            askNextQuestion(tree);
+          } else {
+            System.out.println("I win!");
+          }
+          questionIsAnswered = true;
+          break;
+        case "n":
+          currentNode.setTrue(false);
+
+          System.out.println("You win. I give up. What were you thinking of?");
+          String userAnswer = scanner.nextLine();
+          System.out
+              .printf("What question would you ask to tell the difference between a %s and a \n"
+                  + "%s?\n", userAnswer, currentNode.getAnimal());
+          String userQuestion = scanner.nextLine();
+
+          boolean answerInvalid = false;
+          do {
+            System.out.printf("What would your answer to this question be for a %s? Yes or No\n",
+                userAnswer);
+            enteredString = scanner.nextLine().toLowerCase().trim();
+
+            currentNode = tree.getRoot();
+            currentNode = currentNode.getLeft();
+
+            if (enteredString.equals("yes")) {
+
+              Node rightNode = new Node(currentNode.getQuestion(), currentNode.getAnimal());
+              currentNode.setRight(rightNode);
+
+              currentNode.setQuestion(userQuestion);
+              currentNode.setAnimal(null);
+
+              Node leftNode = new Node("Is it a " + userAnswer, userAnswer);
+              currentNode.setLeft(leftNode);
+
+            } else if (enteredString.equals("no")) {
+
+              Node leftNode = new Node(currentNode.getQuestion(), currentNode.getAnimal());
+              currentNode.setLeft(leftNode);
+
+              currentNode.setQuestion(userQuestion);
+              currentNode.setAnimal(null);
+
+              Node rightNode = new Node("Is it a " + userAnswer, userAnswer);
+              currentNode.setRight(rightNode);
+            } else {
+              answerInvalid = true;
+              System.out.println("Invalid answer");
+            }
+
+          } while (answerInvalid);
+
+          questionIsAnswered = true;
+          break;
+        default:
+          System.out.println("Invalid entry.");
+      }
+
+    } while (!questionIsAnswered);
+
+    return tree;
+  }
+
+}
+```
+
+```
+package com.oop.ai.com.yesnogame;
+
+public class Node {
+
+  String question;
+  String animal;
+  boolean isTrue;
+  Node left;
+  Node right;
+
+
+  public Node(String question) {
+    this(question,"");
+  }
+
+  public Node(String question, String animal) {
+    this.question = question;
+    this.animal = animal;
+    left = null;
+    right = null;
+  }
+
+  public boolean isTrue() {
+    return isTrue;
+  }
+
+  public String getAnimal() {
+    return animal;
+  }
+
+  public void setAnimal(String animal) {
+    this.animal = animal;
+  }
+
+  public void setTrue(boolean aTrue) {
+    isTrue = aTrue;
+  }
+
+  public String getQuestion() {
+    return question;
+  }
+
+  public void setQuestion(String question) {
+    this.question = question;
+  }
+
+  public void setLeft(Node node) {
+    if (left == null)
+      left = node;
+  }
+
+  public void setRight(Node node) {
+    if (right == null)
+      right = node;
+  }
+
+  public Node getLeft() {
+    return left;
+  }
+
+  public Node getRight() {
+    return right;
+  }
+
+
+  public String print() {
+    return this.print("", true, "");
+  }
+
+  public String print(String prefix, boolean isTail, String sb) {
+    if (right != null) {
+      right.print(prefix + (isTail ? "| N  " : "   "), false, sb);
+    }
+    System.out.println(prefix + (isTail ? "\\-- " : "/-- ") + getQuestion());
+    if (left != null) {
+      left.print(prefix + (isTail ? "    " : "| Y   "), true, sb);
+    }
+    return sb;
+  }
+
+}
+```
+```
+package com.oop.ai.com.yesnogame;
+
+public class BTree {
+
+  private Node root;
+  private Node currentNode;
+
+  public BTree() {
+    root = null;
+  }
+
+  // Search for a node that contains a particular value
+  public boolean search(String question) {
+    return search(root,question);
+  }
+
+  private boolean search(Node node, String question) {
+    if (node.getQuestion().equals(question))
+      return true;
+    if (node.getLeft() != null)
+      if(search(node.getLeft(), question))
+        return true;
+      if(node.getRight() != null)
+        if(search(node.getRight(),question))
+          return true;
+      return false;
+  }
+
+
+  public Node getRoot() {
+
+    return root;
+  }
+
+  public void setRoot(Node root) {
+    this.root = root;
+  }
+
+  public boolean isEmpty() {
+    return root == null;
+  }
+
+  public int countNodes() {
+
+    return countNodes(root);
+  }
+
+  private int countNodes(Node node) {
+    int count = 1;
+    if (node == null) {
+      return 0;
+    } else {
+      count += countNodes(node.getLeft());
+      count += countNodes(node.getRight());
+      return count;
+    }
+  }
+
+  public void print() {
+    root.print();
+  }
+
+  public Node getCurrent() {
+    return currentNode;
+  }
+
+  public void setCurrent(Node node) {
+    this.currentNode = node;
+  }
+}
+```
