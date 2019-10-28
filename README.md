@@ -886,3 +886,15 @@ public class BTree {
   }
 }
 ```
+
+##### Section 4 Entropy and the ID3 Algorithm
+##### Section 4.1 Decision Tree Algorithms (2 hours)
+- Most popular Decision Tree Algorithms are Classification and Regression Tree (CART), Iterative Dichotomiser 3 (ID3), C4.5 (successor of ID3), Chi-squared Automatic Interaction Detection (CHAID), Decision Stump, and Conditional Decision Trees
+- Not just about finding an answer, can also be used to analyze data
+- Based on passenger survival data from the Titanic, it is possible to see which groups were more likely to survive with a tree structure.
+- It is typically quite easy to interpret data from a decision tree.
+- Machine Learning is most valuable when we have access to large data sets, like internet searches, advertising, credit card fraud, medical diagnoses.
+- Good decision tree algorithms are required to extract information from these data sets.
+- 
+- 
+
