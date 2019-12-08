@@ -895,6 +895,6 @@ public class BTree {
 - It is typically quite easy to interpret data from a decision tree.
 - Machine Learning is most valuable when we have access to large data sets, like internet searches, advertising, credit card fraud, medical diagnoses.
 - Good decision tree algorithms are required to extract information from these data sets.
-- 
-- 
+- Decision Trees are built by algorithms like ID3 ( a top-down, greedy approach)
+
 
