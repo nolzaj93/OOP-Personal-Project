@@ -898,3 +898,120 @@ public class BTree {
 - Decision Trees are built by algorithms like ID3 ( a top-down, greedy approach)
 
 
+##### Section 4.2 Information Entropy
+###### Intro
+- In 1949, this concept was defined by mathematicians.
+- From concept of entropy (disorder) in statistical thermodynamics, and refers to uncertainty in data.
+- Data with high level of uncertainty or randomness will contain more information that can be used.
+- If given new data (uncertain, unknown), then new information is learned (high entropy).
+- If given known data, then no learning takes place (redundant training).
+- This information would have low (or zero) entropy.
+- This concept allows for quantification of making the best split in our decision tree by analyzing variance in the data. 
+
+###### Variance
+- Measures how far a data set is spread out, "the average of the squared differences from the mean"
+- 5,5,5,5,5 has a variance of 0 because all the numbers are equal.
+- 5,5,5,5,6 has a variance of 0.16. Low variance.
+- 5,5,5,5,2000 has a variance of 798. Higher variance.
+- With high variance we don't know much about the data, but if there is a narrow variance then we are more confident in the data values.
+
+###### Information Entropy
+- Entropy equals negative sum over x (1 to n) of p(x) * log2p(x)
+- Returns how much information to expect from some action.
+- The higher the number the more information we obtain.
+- If all marbles in a bag are green, there is no variance, and nothing to learn, entropy is 0 intuitively.
+- p(x) = 1; - 1 * log(1) = 0
+- We gain little information so this bag of green marbles is a poor training set.
+- For 5 red and 5 green we calculate p(x) = 5/10 for each
+- Entropy(S) = -(5/10)log2(5/10) - (5/10)log2(5/10) = 1
+- 1 is higher so this would be a better training set.
+
+###### Entropy of Coin Toss
+- 2-sided coin with same side on both yields entropy of 0 because we already know the result.
+- Highest entropy is 1, with 0.5 probability of each side, meaning we will gain new information in half the cases.
+
+###### How Much Information
+- Coin toss contains a maximum of 1 bit of information.
+- Other examples can be greater than 1 obviously.
+- Amount of Information  = log2(# of options) = 1 bit for fair coin toss because there are 2 options.
+
+###### Bits of Information
+- Six-sided dice, 6 possible results
+- Amount of information = log2(6) = 2.58 bit
+- Rolling a six-sided dice returns a maximum of 2.58 bits of information.
+- This is the goal of entropy which is to choose the attribute(s) the will give the most information.
+
+##### Section 4.3 ID3 Worked Example
+- ID3 algorithm is long, but calculates entropy and gain.
+- This example covers whether to play an outdoor sport depending on weather.
+- Play Classification (Outcome) - the PLAY classification has a value of yes or no. 
+- The entropy equation will have 2 attributes. 9-Yes and 5-No values in 14 rows of data set.
+- Entropy(play): - p(yes) log2(p(yes)) - p(no) log2(p(no)) = - (9/14)*log2(9/14) - (5/14)*log2(5/14) = 0.94
+- Information Gain - measures how much entropy is reduced when partitioning on an attribute(A)
+- The higher the number, the better it classifies the data.
+- Ths shows which of the dependent data would be the best choice from this entropy.
+- Gain (S,A) = Entropy (S) - sum of Values(A) (|Sv|/|S|) * Entropy (Sv)
+- Information Gain will be calculated for each of the weather attributes: outlook, temperature, humidity, wind
+
+- Outlook Attribute - Calculate entropy for each Sunny, Overcast, and Rain
+- Entropy(Sunny) - 2 yes and 3 no outcomes = 0.971
+- Entropy(Overcast) - 4 yes and 0 no outcomes = 0, result is always known
+- Entropy(Rain) - 3 yes and 2 no outcomes = 0.971
+
+- Gain - outlook - 5 sunny out of 15, 4 overcast out of 14, and 5 rain out of 14
+- Gain (S, outlook) = 0.94 - (5/14)*Entropy(S sunny) - (4/14)*Entropy(S overcast) - (5/14)*Entropy(S rain) = 0.246
+
+- Gain - repeat for temperature, humidity and wind
+- Temperature - Entropy(Cold) 3 yes, 1 no = 0.811
+- Entropy(Mild) 4 yes, 2 no = 0.918
+- Entropy(Hot) 2 yes, 2 no = 1.0
+
+- Gain (S,Temperature) = 0.94 - (4/14)Entropy(S cold) - (6/14)Entropy(S mild) - (4/14)Entropy(S hot) = 0.028
+
+- Humidity - Entropy (High), 3 yes, 4 no = 0.985
+- Entropy (Normal), 6 yes, 1 no = 0.592
+- Gain (S, Humidity) = 0.94 - (7/14)Entropy(S high) - (7/14)Entropy(S normal)
+- Gain (S, humidity) = 0.151
+
+- Wind - Entropy (Weak), 6 yes, 2 no = 0.811
+- Wind - Entropy (Strong), 3 yes, 3 no = 1.0
+- Gain(S,Wind) = 0.94 - (8/14)Entropy(S weak) - (6/14)Entropy(S strong) = 0.048
+
+- Gain (S,outlook) has highest gain of 0.246 so this will be the best choice for the root of the tree.
+- Splitting data - notice which rows are passed down to each attribute.
+- Round 2 - the rows are passed to the next level based on the three choices of outlook: sunny, overcast, or rain. We begin the process again for each of the 3 data sets (Sunny, overcast, rain)
+- Sunny Branch - ID3 tests to see if a table is empty, if not empty then it does not add a default categorization. Then tests f the outcomes are all the same. There are a variety of outcomes so we do not add a categorization.
+- Rows 1,2,8,9,11 make the sunny data table.
+- If all examples are positive we add a categorization leaf node (+ label), all negative leaf node (- label). In this case, 2 yes and 3 no, so we add an attribute node.
+- Begin process again with Sunny Outlook table. We are left with temperature, humidity, wind, and play.
+- Attribute Selection - 2 yes and 3 no, Entropy(S) = 0.971
+- Calculate Entropy for temperature - always negative when hot and cold so the entropy is 0, 1+/1- for mild, so the entropy is 1
+- Gain(S, temperature) = 0.972 - (S hot/5)Entropy(S hot) - (S mild/5)Entropy(S mild) - (S cold/5)Entropy(S cold)  = 0.572
+- Gain (S, humidity) - both high and normal humidity have a definite outcome, so both have entropy of 0
+- Gain (S. humidity) = 0.972
+- Finally for Wind - Strong will have entropy of 1
+- Entropy(weak) = 0.918, 1 yes and 2 no
+- Gain (S,wind) = 0.972- (3/5)Entropy(S weak) - (2/5)*Entropy (S strong) = 0.021
+
+- Gain (S, humidity) = 0.972 is highest so it is chosen at this branch.
+
+- Round 3 - Again start the process with the new tables as done previously
+- First look at the data that has reached humidity high.
+- Notice that the result is always No.
+- The algorithm says if all the results (negative in this example) are equal, then this path is complete.
+- Notice that humidity normal is the same.
+- Both results are equal so the path is complete.
+- Overcast - all rows under Outlook -> Sunny are complete, move on to Outlook -> Overcast.
+- The result for Play? is always yes so according to ID3 this is finished as well.
+
+- Complete for Outlook (Rain) which shows wind produces the highest gain.
+- Split them into strong and weak winds which shows a definite result for both, which finishes the decision tree.
+
+- Scenario Missed - Overcast doesn't have a 100% classification, so ID3 chooses the most common example, so Overcast is classified as Yes.
+
+##### 4.4 Create an ID3 Tree
+
+###### Trees Revisited 
+- Not a binary tree, since a node may have 2 or more child nodes. First step is to create a structure capable of representing a tree.
+
+
