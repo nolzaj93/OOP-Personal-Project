@@ -1154,10 +1154,9 @@ static public void printArrayList(List<ArrayList<String>> data) {
 
 
 Test Summary: Sections 3 & 4 Quiz
-
-Review	Status	Question	Mandatory?	Points Available	Points Awarded
- 	 	Section 3	
-9	8
+```
+ Review	Status	Question	Mandatory?	Points Available	Points Awarded
+ Section 3	
 	Answered	     In recursion, a base case mus...	Yes	1	1
 	Answered	     If you create no base case in...	Yes	1	1
 	Answered	     Recurive methods can always b...	Yes	1	1
@@ -1167,13 +1166,12 @@ Review	Status	Question	Mandatory?	Points Available	Points Awarded
 	Answered	     The code below is an example ...	Yes	1	1
 	Answered	     In the following tree, what w...	Yes	1	1
 	Answered	     Tree traversal is:	Yes	1	1
- 	 	Section 4	
-6	6
+  Section 4	
 	Answered	     C4.5 is the successor to ID3....	Yes	1	1
 	Answered	     Decision trees work better if...	Yes	1	1
 	Answered	     Which would be the best struc...	Yes	1	1
 	Answered	     Decision trees can only be re...	Yes	1	1
 	Answered	     Information Entropy quantifie...	Yes	1	1
 	Answered	     Variance is:	Yes	1	1
-
+```
 
