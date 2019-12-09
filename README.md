@@ -1149,3 +1149,32 @@ static public void printArrayList(List<ArrayList<String>> data) {
 	}	
 }
 ```
+
+##### Section 3 and 4 Quiz
+
+
+Test Summary: Sections 3 & 4 Quiz
+Click a question to return to it. You will see the response that was entered and whether or not the response was correct. If the response was incorrect the correct answer will be displayed.
+AnsweredAnsweredUnansweredUnanswered
+Review	Status	Question	Mandatory?	Points Available	Points Awarded
+ 	 	Section 3	
+9	8
+	Answered	     In recursion, a base case mus...	Yes	1	1
+	Answered	     If you create no base case in...	Yes	1	1
+	Answered	     Recurive methods can always b...	Yes	1	1
+	Answered	     A binary tree can only store ...	Yes	1	1
+	Answered	     If a node has both its siblin...	Yes	1	0
+	Answered	     In a decision tree, it doesnﾒ...	Yes	1	1
+	Answered	     The code below is an example ...	Yes	1	1
+	Answered	     In the following tree, what w...	Yes	1	1
+	Answered	     Tree traversal is:	Yes	1	1
+ 	 	Section 4	
+6	6
+	Answered	     C4.5 is the successor to ID3....	Yes	1	1
+	Answered	     Decision trees work better if...	Yes	1	1
+	Answered	     Which would be the best struc...	Yes	1	1
+	Answered	     Decision trees can only be re...	Yes	1	1
+	Answered	     Information Entropy quantifie...	Yes	1	1
+	Answered	     Variance is:	Yes	1	1
+
+
