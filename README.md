@@ -1154,8 +1154,7 @@ static public void printArrayList(List<ArrayList<String>> data) {
 
 
 Test Summary: Sections 3 & 4 Quiz
-Click a question to return to it. You will see the response that was entered and whether or not the response was correct. If the response was incorrect the correct answer will be displayed.
-AnsweredAnsweredUnansweredUnanswered
+
 Review	Status	Question	Mandatory?	Points Available	Points Awarded
  	 	Section 3	
 9	8
