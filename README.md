@@ -1014,4 +1014,138 @@ public class BTree {
 ###### Trees Revisited 
 - Not a binary tree, since a node may have 2 or more child nodes. First step is to create a structure capable of representing a tree.
 
+```
+package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class Node {
+
+  private List<Node> children = new ArrayList<>();
+  private Node parent;
+  private String data;
+  private NodeType type;
+
+  public Node() {
+
+  }
+
+  public Node(String data) {
+    setData(data);
+  }
+
+  public void setData(String data) {
+    this.data = data;
+  }
+
+  public String getData() {
+    return data;
+  }
+
+  public List<Node> getChildren() {
+    return children;
+  }
+
+  void addChild(Node node) {
+    node.parent = this;
+    this.children.add(node);
+
+  }
+
+  void removeChildren() {
+    children = new ArrayList<>();
+  }
+
+  public Node getParent() {
+    return parent;
+  }
+
+  public void print(String prefix, boolean isTail) {
+
+    System.out.println(prefix + (isTail ? "\\-- " :  "|-- ")+data);
+    for(int i = 0; i < children.size() - 1; i++) {
+      children.get(i).print(prefix + (isTail ? "    " : "|   "),false);
+    }
+    if (children.size() > 0) {
+      children.get(children.size() - 1).print(prefix + (isTail ? "   " : "|   "), true);
+    }
+  }
+}
+
+```
+
+```
+public class Tree {
+  private Node root;
+
+  public Node getRoot() {
+    return root;
+  }
+
+  public void setRoot(Node root) {
+    this.root = root;
+  }
+
+  public boolean isEmpty() {
+    return (root == null);
+  }
+
+  public void print() {
+    root.print("",true);
+  }
+}
+```
+###### Tree Structure
+- Classes are created, root of the decision tree was outlook, Sunny -->Humidity, Overcast --> Yes, Rain --> Wind
+
+```
+public enum NodeType {
+	ROOTNODE,
+	LEAFNODE,
+	BRANCH
+}
+```
+
+###### Load CSV
+```
+public List<ArrayList<String>> loadCSV(String filepath) throws FileNotFoundException {
+	List<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
+	Scanner scan = new Scanner(new File(filepath));
+	while (scan.hasNextLine()) {
+		String line = scan.nextLine();
+		ArrayList<String> lineArrayList = new 
+			ArrayList<String>(Arrays.asList(line.split(",")));
+			
+		data.add(lineArrayList);
+	}
+	return data;
+}
+```
+###### Display Table
+```
+static public void printArrayList(List<ArrayList<String>> data) {
+	int colnum = 0;
+	List<Integer> maxcolwidths = new ArrayList<Integer>();
+	for(ArrayList<String> row : data) {
+		for(String item : row) {
+			if(maxcolwidths.size() <= colnum) {
+				maxcolwidths.add(item.length());
+			} else if (item.length() > maxcolwidths.get(colnum)) {
+				maxcolwidths.set(colnum,item.length());
+			}
+			colnum++;
+		}
+		colnum = 0;
+		for(ArrayList <String> row : data) {
+			for (String item : row) {
+			  String format = "| %-" + maxcolwidths.get(colnum) + "s";
+			  System.out.printf(format,item);
+			  colnum++;
+			}
+	        }
+	colnum = 0;
+	System.out.println();
+	}	
+}
+```
