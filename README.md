@@ -1175,3 +1175,70 @@ Test Summary: Sections 3 & 4 Quiz
 	Answered	     Variance is:	Yes	1	1
 ```
 
+
+```
+Test Summary: AiML Final Exam
+Click a question to return to it. You will see the response that was entered and whether or not the response was correct. If the response was incorrect the correct answer will be displayed.
+AnsweredAnsweredUnansweredUnanswered
+Review	Status	Question	Mandatory?	Points Available	Points Awarded
+ 	 	Section 1	
+20	17
+	Answered	     Which of the following is not...	Yes	1	1
+	Answered	     Automatic recording of GPS on...	Yes	1	1
+	Answered	     Which of the following uses m...	Yes	1	1
+	Answered	     Data exhaust allows systems t...	Yes	1	1
+	Answered	     Which of the following is the...	Yes	1	0
+	Answered	     Is raw processing power a dem...	Yes	1	1
+	Answered	     What does data mean?	Yes	1	1
+	Answered	     Recoding the number of visito...	Yes	1	0
+	Answered	     The date and time of a credit...	Yes	1	0
+	Answered	     Recording the tempearture eve...	Yes	1	1
+	Answered	     Viewing a summary of all your...	Yes	1	1
+	Answered	     Data normally stored in a tab...	Yes	1	1
+	Answered	     Training a program to find fa...	Yes	1	1
+	Answered	     Data that can be shown in tab...	Yes	1	1
+	Answered	     Data shown as a regression ca...	Yes	1	1
+	Answered	     Supervised Learning is	Yes	1	1
+	Answered	     You watch a baseball game wit...	Yes	1	1
+	Answered	     Having no knowledge of a syst...	Yes	1	1
+	Answered	     In a loan example "has job is...	Yes	1	1
+	Answered	     Classification of data is whe...	Yes	1	1
+ 	 	Section 2	
+8	7
+	Answered	     As personal computers and dev...	Yes	1	1
+	Answered	     Cloud computing is one of the...	Yes	1	1
+	Answered	     Requiring to check if someone...	Yes	1	0
+	Answered	     In the CRISP model, how would...	Yes	1	1
+	Answered	     Data Understanding is the fir...	Yes	1	1
+	Answered	     In the CRIP model we cannot m...	Yes	1	1
+	Answered	     Which one of the following is...	Yes	1	1
+	Answered	     The CRISP model is iterative....	Yes	1	1
+ 	 	Section 3	
+14	14
+	Answered	     Trees are very useful for rep...	Yes	1	1
+	Answered	     Must every node in a tree hav...	Yes	1	1
+	Answered	     Binary Trees are made up of a...	Yes	1	1
+	Answered	     In a binary tree what is the ...	Yes	1	1
+	Answered	     In a Node class the name of t...	Yes	1	1
+	Answered	     In the following tree what wo...	Yes	1	1
+	Answered	     Tree traversal is:	Yes	1	1
+	Answered	     Which of the following is not...	Yes	1	1
+	Answered	     In the following tree, what w...	Yes	1	1
+	Answered	     In a decision tree, it doesnﾒ...	Yes	1	1
+	Answered	     In recursion, a base case mus...	Yes	1	1
+	Answered	     This is an example of a recur...	Yes	1	1
+	Answered	     Recurive methods can always b...	Yes	1	1
+	Answered	     A method making a call to its...	Yes	1	1
+ 	 	Section 4	
+8	7
+	Answered	     Decision trees work better if...	Yes	1	1
+	Answered	     Decision trees can only be cr...	Yes	1	1
+	Answered	     ID3 is short for:	Yes	1	1
+	Answered	     Non binary tree classes still...	Yes	1	1
+	Answered	     Which would be the best struc...	Yes	1	1
+	Answered	     Information Entropy quantifie...	Yes	1	1
+	Answered	     Variance is:	Yes	1	1
+	Answered	     If you know the outcome of an...	Yes	1	0
+```
+
+
